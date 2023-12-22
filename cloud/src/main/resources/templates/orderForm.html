@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Aplikacja Taco Cloud</title>
+  <link rel="stylesheet" th:href="@{/order.css}" />
+</head><body>
+<form method="POST" th:action="@{/orders/current}" th:object="${order}">
+  <h1>Zamów przygotowane taco!</h1>
+  <img th:src="@{/images/andrzej.png}"/>
+  <a th:href="@{/design}" id="another">Przygotuj kolejne taco</a><br/>
+  <h3>Adres dostarczenia taco...</h3>
+  <label for="name">Imię i nazwisko: </label>
+  <input type="text" id="name" th:field="*{name}"/>
+  <span class="validationError"
+        th:if="${#fields.hasErrors('name')}"
+        th:errors="*{name}">Błąd numeru karty kredytowej.</span>
+  <br/>
+  <label for="street">Ulica: </label>
+  <input type="text" id="street" th:field="*{street}"/>
+  <span class="validationError"
+        th:if="${#fields.hasErrors('street')}"
+        th:errors="*{street}">Błąd numeru karty kredytowej.</span>
+  <br/>
+  <label for="city">Miejscowość: </label>
+  <input type="text" id="city" th:field="*{city}"/>
+  <span class="validationError"
+        th:if="${#fields.hasErrors('city')}"
+        th:errors="*{city}">Błąd numeru karty kredytowej.</span>
+  <br/>
+  <label for="state">Województwo: </label>
+  <input type="text" id="state" th:field="*{state}"/>
+  <span class="validationError"
+        th:if="${#fields.hasErrors('state')}"-
+        th:errors="*{state}">Błąd numeru karty kredytowej.</span>
+  <br/>
+  <label for="zip">Kod pocztowy: </label>
+  <input type="text" id="zip" th:field="*{zip}"/>
+  <span class="validationError"
+        th:if="${#fields.hasErrors('zip')}"
+        th:errors="*{zip}">Błąd numeru karty kredytowej.</span>
+  <br/>
+  <h3>Sposób płatności...</h3>
+  <label for="ccNumber">Numer karty kredytowej:</label>
+  <input type="text" id="ccNumber" th:field="*{ccNumber}"/>
+  <span class="validationError"
+        th:if="${#fields.hasErrors('ccNumber')}"
+        th:errors="*{ccNumber}">Błąd numeru karty kredytowej.</span>
+  <br/>
+  <label for="ccExpiration">Data ważności: </label>
+  <input type="text" id="ccExpiration" th:field="*{ccExpiration}"/>
+  <span class="validationError"
+        th:if="${#fields.hasErrors('ccExpiration')}"
+        th:errors="*{ccExpiration}">Błąd numeru karty kredytowej.</span>
+  <br/>
+  <label for="ccCVV">Kod CVV: </label>
+  <input type="text" id="ccCVV" th:field="*{ccCVV}"/>
+  <span class="validationError"
+        th:if="${#fields.hasErrors('ccCVV')}"
+        th:errors="*{ccCVV}">Błąd numeru karty kredytowej.</span>
+  <br/>
+  <input type="submit" value="Złóż zamówienie"/>
+</form>
+</body>
+</html>
