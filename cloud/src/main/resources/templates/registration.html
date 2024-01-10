@@ -3,10 +3,13 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Aplikacja Taco Cloud</title>
+  <link rel="stylesheet" th:href="@{/login.css}" />
+  <link th:insert="~{fragments/navbar :: style}"/>
 </head>
 <body>
+<div th:insert="~{fragments/navbar :: navbar}">  </div>
 <h1>Rejestrowanie</h1>
-<img th:src="@{/images/TacoCloud.png}"/>
+<img th:src="@{/images/andrzej.png}"/>
 <form method="POST" th:action="@{/register}" id="form">
   <label for="username">Nazwa użytkownika: </label>
   <input type="text" name="username"/><br/>

@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplikacja Taco Cloud</title>
     <link rel="stylesheet" th:href="@{/styles-dark.css}" />
+    <link th:insert="~{fragments/navbar :: style}"/>
 </head>
 <body>
+<div th:insert="~{fragments/navbar :: navbar}">  </div>
 <h1>Przygotuj własne taco!</h1>
 <img th:src="@{/images/andrzej.png}"/>
 <form method="POST" th:object="${design}">

@@ -3,14 +3,16 @@
 
 <head>
     <title>Aplikacja Cloud</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <link th:insert="~{fragments/navbar :: style}"/>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+
 </head>
 
 <body>
+<div th:insert="~{fragments/navbar :: navbar}">  </div>
 <h1>Witaj w...</h1>
 <img th:src="@{/images/andrzej.png}" />
-<button onclick="redirectToDesign()">START</button><br />
-
+<button id="login_button" onclick="redirectToDesign()">START</button><br />
 <script>
         function redirectToDesign() {
             window.location.href = '/design';

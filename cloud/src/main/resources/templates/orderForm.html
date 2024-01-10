@@ -5,7 +5,10 @@
 <head>
   <title>Aplikacja Taco Cloud</title>
   <link rel="stylesheet" th:href="@{/order.css}" />
-</head><body>
+  <link th:insert="~{fragments/navbar :: style}"/>
+</head>
+<body>
+<div th:insert="~{fragments/navbar :: navbar}">  </div>
 <form method="POST" th:action="@{/orders/current}" th:object="${order}">
   <h1>Zamów przygotowane taco!</h1>
   <img th:src="@{/images/andrzej.png}"/>

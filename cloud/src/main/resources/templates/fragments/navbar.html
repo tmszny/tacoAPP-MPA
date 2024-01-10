@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>NavigationBar</title>
+  <link th:fragment="style" rel="stylesheet" th:href="@{/navbar.css}">
+</head>
+<body>
+
+<nav th:fragment="navbar" class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" th:href="@{/}">TacoCloud</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a class="nav-link" th:href="@{/register}">Rejestracja</a></li>
+      <li><a class="nav-link" th:href="@{/login}">Login</a></li>
+      <li><a class="nav-link" th:href="@{/design}">Konto</a></li>
+      <li id="logout">
+        <form id="logout_form" th:method="POST" th:action="@{/logout}">
+          <button type="submit" class="logout_button">Logout</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</nav>
+</body>
+</html>
